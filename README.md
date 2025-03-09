@@ -53,4 +53,6 @@ This is simple by
     <br>
     ![Function Place VI Contents](Images/Function%20Place%20VI%20Contents.png)
     <br>
-    `Edit VI Title` to be that of the object name, such as `Class.lvclass`
+    `Edit VI Title...` to be that of the object name, such as `Class.lvclass`. This occurs since we're using a \*.vi, not \*.lvclass.
+    <br>
+    `Edit Short Name...` take away the `*.lvclass` extension
