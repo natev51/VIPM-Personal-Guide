@@ -56,3 +56,27 @@ This is simple by
     `Edit VI Title...` to be that of the object name, such as `Class.lvclass`. This occurs since we're using a \*.vi, not \*.lvclass.
     <br>
     `Edit Short Name...` take away the `*.lvclass` extension
+
+# 
+
+![alt text](image.png)<br>
+![alt text](image-1.png)<br>
+![alt text](image-2.png)<br>
+***Above put interface!!!***<br>
+Within incoming have two more folders for:<br>
+Within Messages folder:
+1. Incoming External (has interface via block diagram as well)
+2. Incoming Internal
+3. Outgoing External
+4. Outgoing Internal
+
+all have the interface object (via block diagram) for reference i.e. interface (left) and corresponding message (right). The necessary interface block diagram `*.vi` gives quick access to the developer what YOUR actor which interface to implement in order to *instantiate (correct word?)* the messages method.<br>
+Further, this established a best practice that a message is coupled to an interface in the palette
+
+Naming convention:
+- `methodName Interface Msg.lvclass` (note the use of the word `Interface` which is separated from the scripted `methodName Msg.lvclass`)
+- `methodName Interface Msg.lvclass` has ONLY one method: `methodName.vi`, which will be tied to the `methodName Msg.lvclass`
+
+Rule of thumb:<br>
+Messages are ALL tied to an interface
+> note: unless the message is internal to the actor, then this message is private in the library
