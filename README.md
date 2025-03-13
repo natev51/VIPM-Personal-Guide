@@ -57,11 +57,11 @@ This is simple by
     <br>
     `Edit Short Name...` take away the `*.lvclass` extension
 
-# 
+# Actor-Specific Packages i.e. Advanced
 
 ![alt text](image.png)<br>
 ![alt text](image-1.png)<br>
-![alt text](image-2.png)<br>
+![alt text](image-3.png)<br>
 ***Above put interface!!!***<br>
 Within incoming have two more folders for:<br>
 Within Messages folder:
@@ -80,3 +80,35 @@ Naming convention:
 Rule of thumb:<br>
 Messages are ALL tied to an interface
 > note: unless the message is internal to the actor, then this message is private in the library
+
+
+
+
+
+Idea for easier messages..
+`methodName Interface.lvclass` internally:
+- `methodName.vi (DD)` and
+- `methodName Core.vi (DD)`
+  - implementation of this method is in override and
+  - `methodName Core.vi (DD)` within `methodName.vi (DD)`
+
+The idea:
+- `Send methodName ...` scripted here <------------
+- `Do.vi` scripted here
+
+maybe in `Msg.lvclass (Interface)`, there are static methods (or dynamic?) that define the behavior for the `Send` and `Do` methods..?
+
+
+So really, you would ONLY create a *message class* (if it still exists after the above) in an actor when that message is internal for only the actor to use. This is a prime example to use a library becuase this message class, within the actors library, must be marked private so anything outside of the library cannot call these methods..<br>
+in the future, if the interface message works.. then the interface would be set as an interface.
+
+with an interface message, there is no private data.. SOO that means that there is a cluster (class?) inside the interface which holds the data being carried. 
+
+
+an interface and class are created, as they normally are with default things inside along with blank controls.. the user just puts in what the name of the message is.. therefore to edit what the data is to be put into the message, the user changes the input settings and then rightclicks the library containing the message and the scripting occurs rewriting everything. except for the controls that you have just put in.
+
+
+This *may (?)* require the Msg.lvclass to become an interface..
+
+
+Send.vi internally has the enqueued message internals, with object input (that contains the private data to be passed
